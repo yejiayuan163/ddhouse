@@ -9,6 +9,7 @@
             <image lazy-load :src="item.pic" class="slide-image"/>
             <div>{{item.title}}</div>
             <div>{{item.des}}</div>
+            <label-list :labelList="item.labelList"></label-list>
           </div>
         </swiper-item>
       </div>
@@ -17,7 +18,7 @@
 </template>
 
 <script>
-  // import labelList from '@/components/labelList/index.vue'
+  import labelList from '@/components/labelList/index.vue'
   export default {
     data() {
       return {
@@ -34,6 +35,9 @@
         type: Array,
         require: true
       }
+    },
+    components: {
+      labelList
     },
     methods: {
       link_detail(item) {

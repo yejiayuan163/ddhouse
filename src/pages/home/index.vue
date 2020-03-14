@@ -25,12 +25,20 @@
     <hang-qing :city="city" :hangQingData="hangQingData"></hang-qing>
     <!--叮叮好房-->
     <div class="hao-fang">
-      <div class="title">
-        <img src="/static/images/haofangTitle.png" alt="">
-        <div>查看全部></div>
-      </div>
+      <title-bar text="查看全部" img-src="/static/images/haofangTitle.png"></title-bar>
       <!--轮播图-->
       <house-banner :houseImgUrls="houseImgUrls"></house-banner>
+      <div class="house-list">
+        <house-item  v-for="(item,index) in houseList" :house-item="item" :key="index"></house-item>
+      </div>
+    </div>
+    <!--热门活动-->
+    <div class="activity">
+      <title-bar text="查看全部" img-src="/static/images/huodongTitle.png"></title-bar>
+      <div class="activity-content">
+        <activity-item></activity-item>
+        <activity-item></activity-item>
+      </div>
     </div>
   </div>
 </template>
@@ -41,11 +49,14 @@
   import navBar from "./component/navBar/index.vue";
   import advBar from "./component/advBar/index.vue";
   import hangQing from "./component/hangQing/index.vue";
+  import titleBar from './component/titleBar/index.vue'
+  import houseItem from '../../components/houseItem/index.vue'
+  import activityItem from '../../components/activityItem/index.vue'
 
   export default {
     data() {
       return {
-        city: "江门", // 定位数据
+        city: "江门2", // 定位数据
         buildName: "", // 楼盘名称
         imgUrls: [
           {
@@ -60,17 +71,17 @@
             pic: "/static/images/haofangItem1.png",
             title: "越秀 滨江。盛悦",
             des: "新春优惠95折",
-            lab: ["待售", "花园洋房", "湖景地产"]
+            labelList: [{label:"待售",hot:'true'}, {label:"花园洋房",hot:'false'}, {label:"湖景地产",hot:'false'}]
           }, {
             pic: "/static/images/haofangItem1.png",
             title: "越秀 滨江。盛悦",
             des: "新春优惠95折",
-            lab: ["待售", "花园洋房", "湖景地产"]
+            labelList: [{label:"待售",hot:'false'}, {label:"花园洋房",hot:'false'}, {label:"湖景地产",hot:'true'}]
           }, {
             pic: "/static/images/haofangItem1.png",
             title: "越秀 滨江。盛悦",
             des: "新春优惠95折",
-            lab: ["待售", "花园洋房", "湖景地产"]
+            labelList: [{label:"待售",hot:'true'}, {label:"花园洋房",hot:'false'}, {label:"湖景地产",hot:'true'}]
           }], // 楼盘轮播数据
         hangQingData: {
           newHouse: {
@@ -83,7 +94,48 @@
             percent: "3.35",//百分比
             tendency: "down"//下跌
           }
-        } // 行情数据
+        }, // 行情数据
+        houseList:[{
+          imgSrc: "/static/images/itemImg1.png", // 图片链接
+          type: "new", //楼盘类型：一手、二手
+          title: "锦富·汇景湾", // 名称
+          city: "台山市", // 市
+          area: "台山区", // 区
+          acreage: "35-50", // 建筑面积
+          price: "13500", // 单价
+          coupon: true,// 优惠券
+          labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
+        },{
+          imgSrc: "/static/images/itemImg2.png", // 图片链接
+          type: "second", //楼盘类型：一手、二手
+          title: "锦富·汇景湾", // 名称
+          city: "台山市", // 市
+          area: "台山区", // 区
+          acreage: "35-50", // 建筑面积
+          price: "13500", // 单价
+          coupon: true,// 优惠券
+          labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
+        },{
+          imgSrc: "/static/images/itemImg3.png", // 图片链接
+          type: "second", //楼盘类型：一手、二手
+          title: "锦富·汇景湾", // 名称
+          city: "台山市", // 市
+          area: "台山区", // 区
+          acreage: "35-50", // 建筑面积
+          price: "13500", // 单价
+          coupon: true,// 优惠券
+          labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
+        },{
+          imgSrc: "/static/images/itemImg4.png", // 图片链接
+          type: "new", //楼盘类型：一手、二手
+          title: "锦富·汇景湾", // 名称
+          city: "台山市", // 市
+          area: "台山区", // 区
+          acreage: "35-50", // 建筑面积
+          price: "13500", // 单价
+          coupon: true,// 优惠券
+          labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
+        }] // 好房列表
 
       };
     },
@@ -93,7 +145,10 @@
       houseBanner,
       navBar,
       advBar,
-      hangQing
+      hangQing,
+      titleBar,
+      houseItem,
+      activityItem
     },
 
     methods: {
@@ -153,45 +208,10 @@
     height: 28px;
   }
 
-  /*.hang-qing {*/
-  /*display: flex;*/
-  /*!*background: url("/static/images/hangqingbg.png");*!*/
-
-  /*.hang-qing-data {*/
-  /*display: flex;*/
-  /*}*/
-  /*}*/
 
   .hao-fang {
-    .title {
-      display: flex;
-      justify-content: space-between;
-
-      img {
-        width: 80px;
-        height: auto;
-      }
-    }
   }
 
-  /*.banner-wrap2 {*/
-  /*/deep/ ._swiper {*/
-  /*height: 300px !important;*/
-
-  /*.slide-image {*/
-  /*width: 355px !important;*/
-  /*height: 160px !important;*/
-  /*border-radius: 6px 6px 0 0;*/
-  /*}*/
-  /*}*/
-  /*}*/
-
-  /*/deep/ ._swiper {*/
-  /*height: 160px !important;*/
-
-  /*}*/
-
-  /*width: 100vw;*/
   button.catchBtn {
     border: none;
     text-align: inherit;
