@@ -44,8 +44,7 @@
     <div class="news">
       <title-bar text="查看全部" img-src="/static/images/toutiaoTitle.png"></title-bar>
       <div class="activity-content">
-        12321
-        <news-item></news-item>
+        <news-list :newsList="newsList"></news-list>
       </div>
     </div>
   </div>
@@ -60,7 +59,7 @@
   import titleBar from './component/titleBar/index.vue'
   import houseItem from '../../components/houseItem/index.vue'
   import activityItem from '../../components/activityItem/index.vue'
-  import newsItem from '../../components/newsList/index.vue'
+  import newsList from '../../components/newsList/index.vue'
 
   export default {
     data() {
@@ -104,7 +103,8 @@
             tendency: "down"//下跌
           }
         }, // 行情数据
-        houseList:[{
+        houseList:[
+          {
           imgSrc: "/static/images/itemImg1.png", // 图片链接
           type: "new", //楼盘类型：一手、二手
           title: "锦富·汇景湾", // 名称
@@ -157,7 +157,17 @@
             time: "2020/01/11-2020/01/12" // 时间
 
           }
-        ]
+        ], // 活动列表
+        newsList: [
+          {
+          imgSrc: "/static/images/toutiaoImg1.png", // 图片链接
+          title: "多地复工复产 做到防控生产两不误", // 名称
+          read: '2706'
+        },{
+          imgSrc: "/static/images/toutiaoImg2.png", // 图片链接
+          title: "央行：2019年房地产贷款增幅平稳", // 名称
+          read: '2705'
+        }] // 头条列表
 
       };
     },
@@ -171,7 +181,7 @@
       titleBar,
       houseItem,
       activityItem,
-      newsItem
+      newsList
     },
 
     methods: {
