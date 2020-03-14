@@ -36,8 +36,16 @@
     <div class="activity">
       <title-bar text="查看全部" img-src="/static/images/huodongTitle.png"></title-bar>
       <div class="activity-content">
-        <activity-item></activity-item>
-        <activity-item></activity-item>
+        <activity-item :activityItem1="activityItemList[0]"
+                       :activityItem2="activityItemList[1]"></activity-item>
+      </div>
+    </div>
+    <!--叮叮头条-->
+    <div class="news">
+      <title-bar text="查看全部" img-src="/static/images/toutiaoTitle.png"></title-bar>
+      <div class="activity-content">
+        12321
+        <news-item></news-item>
       </div>
     </div>
   </div>
@@ -52,6 +60,7 @@
   import titleBar from './component/titleBar/index.vue'
   import houseItem from '../../components/houseItem/index.vue'
   import activityItem from '../../components/activityItem/index.vue'
+  import newsItem from '../../components/newsList/index.vue'
 
   export default {
     data() {
@@ -135,7 +144,20 @@
           price: "13500", // 单价
           coupon: true,// 优惠券
           labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
-        }] // 好房列表
+        }], // 好房列表
+        activityItemList: [
+          {
+            imgSrc: "/static/images/actImg1.png", // 图片链接
+            title: "叮叮新春嘉年华", // 名称
+            time: "2020/01/11-2020/01/13" // 时间
+
+          },{
+            imgSrc: "/static/images/actImg1.png", // 图片链接
+            title: "叮叮新春嘉年华", // 名称
+            time: "2020/01/11-2020/01/12" // 时间
+
+          }
+        ]
 
       };
     },
@@ -148,7 +170,8 @@
       hangQing,
       titleBar,
       houseItem,
-      activityItem
+      activityItem,
+      newsItem
     },
 
     methods: {
