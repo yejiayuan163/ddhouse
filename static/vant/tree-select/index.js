@@ -53,7 +53,7 @@ VantComponent({
             const { index } = event.currentTarget.dataset;
             const item = this.data.items[index];
             if (!item.disabled) {
-                this.$emit('click-nav', { index });
+                this.$emit('click-navBar', { index });
             }
         },
         // 更新子项列表

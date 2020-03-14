@@ -1,14 +1,17 @@
 {
   "pages": [
+    "pages/home/main",
     "pages/index/main",
     "pages/logs/main",
-    "pages/counter/main"
+    "pages/integral/main",
+    "pages/personal/main",
+    "pages/promoteHouse/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#f54343",
+    "navigationBarTitleText": "叮叮好房",
+    "navigationBarTextStyle": "white"
   },
   "usingComponents": {
     "van-collapse": "/static/vant/collapse/index",
@@ -46,22 +49,22 @@
 
     "list": [{
       "text": "首页",
-      "pagePath": "pages/index/main",
+      "pagePath": "pages/home/main",
       "iconPath": "static/tabs/shouye.jpg",
       "selectedIconPath": "static/tabs/shouye.jpg"
     }, {
       "text": "笋盘",
-      "pagePath": "pages/logs/main",
+      "pagePath": "pages/promoteHouse/main",
       "iconPath": "static/tabs/sunpan.jpg",
       "selectedIconPath": "static/tabs/sunpan.jpg"
     },{
       "text": "领积分",
-      "pagePath": "pages/logs/main",
+      "pagePath": "pages/integral/main",
       "iconPath": "static/tabs/jifen.jpg",
       "selectedIconPath": "static/tabs/jifen.jpg"
     },{
       "text": "我的",
-      "pagePath": "pages/logs/main",
+      "pagePath": "pages/personal/main",
       "iconPath": "static/tabs/wode.jpg",
       "selectedIconPath": "static/tabs/wode.jpg"
     }],
