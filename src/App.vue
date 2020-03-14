@@ -23,14 +23,25 @@ export default {
       logs.unshift(Date.now())
       mpvue.setStorageSync('logs', logs)
     }
+    console.log('iiiiiiiiiiiiiiiiiii')
+    // 加载苹方字体
+    wx.loadFontFace ({
+      family: 'PingFangSC-Medium',
+      source: `url("${process.env.PING_FANG_MEDIUM}")`,
+      success: function(){console.log('load font success')}
+    })
   },
   log () {
     console.log(`log at:${Date.now()}`)
   }
+
 }
 </script>
 
-<style>
+<style lang="less">
+  @import './assets/css/reset.less';
+  @import './assets/css/common.less';
+  @import './assets/css/icon.less';
 .container {
   height: 100%;
   display: flex;

@@ -1,9 +1,13 @@
 <template>
   <div class="wrap">
+    <!--<img class="bg-img" src="/static/images/headerBg.png" alt="背景">-->
     <!--搜索栏-->
     <div class="search-wrap">
       <div class="search">
         <div class="now-site"><img class="site-icon" src="/static/images/dingweiIcon.png" alt="">{{city}}</div>
+        <div class="icon-search">
+          <img src="/static/images/iconSearch.png" alt="search" />
+        </div>
         <van-field
           :value="buildName"
           placeholder="请输入楼盘名"
@@ -11,16 +15,20 @@
           bind:change="buildNameChange"
         />
       </div>
-      <div class="map-btn"><img class="map-icon" src="/static/images/mapIcon.png" alt="">地图找房</div>
+      <div class="map-btn"><img class="map-icon" src="/static/images/mapBtn.png" alt="地图找房"></div>
     </div>
     <!--轮播图-->
     <div class="banner-wrap">
       <banner :imgUrls="imgUrls"></banner>
     </div>
     <!--导航栏-->
-    <nav-bar></nav-bar>
-    <!--购房优惠-->
-    <adv-bar></adv-bar>
+    <div class="nav-bar-wrap">
+      <nav-bar></nav-bar>
+    </div>
+    <!--新闻-->
+    <news-bar :news-title="newsTitle"></news-bar>
+    <!--指引-->
+    <guild></guild>
     <!--行情-->
     <hang-qing :city="city" :hangQingData="hangQingData"></hang-qing>
     <!--叮叮好房-->
@@ -29,7 +37,7 @@
       <!--轮播图-->
       <house-banner :houseImgUrls="houseImgUrls"></house-banner>
       <div class="house-list">
-        <house-item  v-for="(item,index) in houseList" :house-item="item" :key="index"></house-item>
+        <house-item v-for="(item,index) in houseList" :house-item="item" :key="index"></house-item>
       </div>
     </div>
     <!--热门活动-->
@@ -55,16 +63,18 @@
   import houseBanner from "./component/houseBanner/index.vue";
   import navBar from "./component/navBar/index.vue";
   import advBar from "./component/advBar/index.vue";
+  import newsBar from "./component/newsBar/index.vue";
+  import guild from "./component/guild/index.vue";
   import hangQing from "./component/hangQing/index.vue";
-  import titleBar from './component/titleBar/index.vue'
-  import houseItem from '../../components/houseItem/index.vue'
-  import activityItem from '../../components/activityItem/index.vue'
-  import newsList from '../../components/newsList/index.vue'
+  import titleBar from "./component/titleBar/index.vue";
+  import houseItem from "../../components/houseItem/index.vue";
+  import activityItem from "../../components/activityItem/index.vue";
+  import newsList from "../../components/newsList/index.vue";
 
   export default {
     data() {
       return {
-        city: "江门2", // 定位数据
+        city: "江门", // 定位数据
         buildName: "", // 楼盘名称
         imgUrls: [
           {
@@ -74,22 +84,23 @@
           }, {
             pic: "/static/images/banner1.png"
           }], // banner数据
+        newsTitle: '楼市深度解读：看懂2003，才有资格 谈2020！',
         houseImgUrls: [
           {
             pic: "/static/images/haofangItem1.png",
             title: "越秀 滨江。盛悦",
             des: "新春优惠95折",
-            labelList: [{label:"待售",hot:'true'}, {label:"花园洋房",hot:'false'}, {label:"湖景地产",hot:'false'}]
+            labelList: [{ label: "待售", hot: "true" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "false" }]
           }, {
             pic: "/static/images/haofangItem1.png",
             title: "越秀 滨江。盛悦",
             des: "新春优惠95折",
-            labelList: [{label:"待售",hot:'false'}, {label:"花园洋房",hot:'false'}, {label:"湖景地产",hot:'true'}]
+            labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
           }, {
             pic: "/static/images/haofangItem1.png",
             title: "越秀 滨江。盛悦",
             des: "新春优惠95折",
-            labelList: [{label:"待售",hot:'true'}, {label:"花园洋房",hot:'false'}, {label:"湖景地产",hot:'true'}]
+            labelList: [{ label: "待售", hot: "true" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
           }], // 楼盘轮播数据
         hangQingData: {
           newHouse: {
@@ -103,55 +114,55 @@
             tendency: "down"//下跌
           }
         }, // 行情数据
-        houseList:[
+        houseList: [
           {
-          imgSrc: "/static/images/itemImg1.png", // 图片链接
-          type: "new", //楼盘类型：一手、二手
-          title: "锦富·汇景湾", // 名称
-          city: "台山市", // 市
-          area: "台山区", // 区
-          acreage: "35-50", // 建筑面积
-          price: "13500", // 单价
-          coupon: true,// 优惠券
-          labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
-        },{
-          imgSrc: "/static/images/itemImg2.png", // 图片链接
-          type: "second", //楼盘类型：一手、二手
-          title: "锦富·汇景湾", // 名称
-          city: "台山市", // 市
-          area: "台山区", // 区
-          acreage: "35-50", // 建筑面积
-          price: "13500", // 单价
-          coupon: true,// 优惠券
-          labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
-        },{
-          imgSrc: "/static/images/itemImg3.png", // 图片链接
-          type: "second", //楼盘类型：一手、二手
-          title: "锦富·汇景湾", // 名称
-          city: "台山市", // 市
-          area: "台山区", // 区
-          acreage: "35-50", // 建筑面积
-          price: "13500", // 单价
-          coupon: true,// 优惠券
-          labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
-        },{
-          imgSrc: "/static/images/itemImg4.png", // 图片链接
-          type: "new", //楼盘类型：一手、二手
-          title: "锦富·汇景湾", // 名称
-          city: "台山市", // 市
-          area: "台山区", // 区
-          acreage: "35-50", // 建筑面积
-          price: "13500", // 单价
-          coupon: true,// 优惠券
-          labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
-        }], // 好房列表
+            imgSrc: "/static/images/itemImg1.png", // 图片链接
+            type: "new", //楼盘类型：一手、二手
+            title: "锦富·汇景湾", // 名称
+            city: "台山市", // 市
+            area: "台山区", // 区
+            acreage: "35-50", // 建筑面积
+            price: "13500", // 单价
+            coupon: true,// 优惠券
+            labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
+          }, {
+            imgSrc: "/static/images/itemImg2.png", // 图片链接
+            type: "second", //楼盘类型：一手、二手
+            title: "锦富·汇景湾", // 名称
+            city: "台山市", // 市
+            area: "台山区", // 区
+            acreage: "35-50", // 建筑面积
+            price: "13500", // 单价
+            coupon: true,// 优惠券
+            labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
+          }, {
+            imgSrc: "/static/images/itemImg3.png", // 图片链接
+            type: "second", //楼盘类型：一手、二手
+            title: "锦富·汇景湾", // 名称
+            city: "台山市", // 市
+            area: "台山区", // 区
+            acreage: "35-50", // 建筑面积
+            price: "13500", // 单价
+            coupon: true,// 优惠券
+            labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
+          }, {
+            imgSrc: "/static/images/itemImg4.png", // 图片链接
+            type: "new", //楼盘类型：一手、二手
+            title: "锦富·汇景湾", // 名称
+            city: "台山市", // 市
+            area: "台山区", // 区
+            acreage: "35-50", // 建筑面积
+            price: "13500", // 单价
+            coupon: true,// 优惠券
+            labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
+          }], // 好房列表
         activityItemList: [
           {
             imgSrc: "/static/images/actImg1.png", // 图片链接
             title: "叮叮新春嘉年华", // 名称
             time: "2020/01/11-2020/01/13" // 时间
 
-          },{
+          }, {
             imgSrc: "/static/images/actImg1.png", // 图片链接
             title: "叮叮新春嘉年华", // 名称
             time: "2020/01/11-2020/01/12" // 时间
@@ -160,14 +171,14 @@
         ], // 活动列表
         newsList: [
           {
-          imgSrc: "/static/images/toutiaoImg1.png", // 图片链接
-          title: "多地复工复产 做到防控生产两不误", // 名称
-          read: '2706'
-        },{
-          imgSrc: "/static/images/toutiaoImg2.png", // 图片链接
-          title: "央行：2019年房地产贷款增幅平稳", // 名称
-          read: '2705'
-        }] // 头条列表
+            imgSrc: "/static/images/toutiaoImg1.png", // 图片链接
+            title: "多地复工复产 做到防控生产两不误", // 名称
+            read: "2706"
+          }, {
+            imgSrc: "/static/images/toutiaoImg2.png", // 图片链接
+            title: "央行：2019年房地产贷款增幅平稳", // 名称
+            read: "2705"
+          }] // 头条列表
 
       };
     },
@@ -177,6 +188,8 @@
       houseBanner,
       navBar,
       advBar,
+      newsBar,
+      guild,
       hangQing,
       titleBar,
       houseItem,
@@ -210,35 +223,75 @@
 
 <style lang="less" scoped>
   .wrap {
-    padding: 10px;
+    /*position: relative;*/
+    padding: 20px;
+
+    .bg-img {
+      position: absolute;
+      z-index: -1;
+      width: 375px;
+    }
   }
 
   .search-wrap {
     display: flex;
     align-items: center;
+    justify-content:space-between;
+    padding-bottom: 10px;
+    color: #333333;
+
+    .search {
+      width: 486rpx;
+      height: 62rpx;
+      background-color: #f1f1f1;
+      border-radius: 15rpx;
+      display: flex;
+      .now-site {
+        line-height: 30px;
+        font-size: 14px;
+        width: 74px;
+        padding-left: 15px;
+        white-space: nowrap;
+        color: #333333;
+        /*border-right: 1px solid #b0b0b2;*/
+        .site-icon {
+          width: 12px;
+          height: 13px;
+          padding-right: 6px;
+        }
+      }
+      /deep/ .van-cell {
+        padding: 3px;
+        width: 130px;
+        font-size: 14px;
+        background-color: #f1f1f1;
+      }
+      .icon-search {
+        height: 30px;
+        line-height: 34px;
+        img {
+          display: inline-block;
+          padding-left: 8px;
+          padding-right: 6px;
+          border-left: 1px solid #b0b0b2;
+          width:15px;
+          height: 15px;
+        }
+      }
+
+    }
+
+    .map-btn {
+      line-height: 14px;
+      .map-icon {
+        width: 170rpx;
+        height: 62rpx;
+      }
+    }
   }
 
-  .search {
-    display: flex;
-    border-radius: 4px;
-  }
-
-  .now-site {
-    width: 100px;
-  }
-
-  .site-icon {
-    width: 22px;
-    height: 25px;
-  }
-
-  .map-btn {
-    background-color: #ff2f2c;
-  }
-
-  .map-icon {
-    width: 27px;
-    height: 28px;
+  .nav-bar-wrap {
+    padding-top: 17px;
   }
 
 

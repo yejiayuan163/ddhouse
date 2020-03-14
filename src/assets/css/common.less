@@ -1,0 +1,253 @@
+
+// 单行超出省略号
+.ellipsis_1 {
+  word-break: keep-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+// 多行超出省略号
+.ellipsis_2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;//盒子溢出隐藏
+}
+// 左浮动
+.fl {
+  float: left;
+}
+// 右浮动
+.fr {
+  float: right;
+}
+// 清除浮动
+.clearfix {
+  &::after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+.safeArea {
+  padding-bottom: 68rpx!important;
+}
+.placeholder {
+  color: #BDB3AB;
+}
+.theme-btn {
+  color: #FFFFFF;
+  background: linear-gradient(135deg,rgba(255,202,76,1) 0%,rgba(255,149,23,1) 100%);
+  &::after {
+    border: none;
+  }
+}
+.placeholder9 {
+  color: #999999;
+}
+// 更改弹窗样式
+#jsx-dialog{
+  .overlay-index--van-overlay{
+    background-color: rgba(0,0,0,.5) !important;
+  }
+  .dialog-index--van-dialog{
+    width: 270px;
+    border-radius: 14px;
+    text-align: center;
+    .van-dialog__header {
+      position: relative;
+      display: inline-block;
+      color: #443822;
+      font-size: 18px;
+      font-weight: bold;
+      padding-top: 20px;
+      &:after {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        bottom: 1px;
+        content: ' ';
+        width: calc(100% + 8px);
+        height: 7px;
+        background:rgba(216,216,216,1) linear-gradient(90deg,rgba(255,202,76,1) 0%,rgba(255,149,23,1) 100%);
+        border-radius: 4px;
+        opacity:0.6;
+        z-index: -1;
+      }
+    }
+
+    .van-dialog__message {
+      padding: 20px 20px;
+      font-size:15px;
+      font-weight:400;
+      color:rgba(68,56,34,1);
+      line-height:21px;
+    }
+    .van-hairline--top {
+      &.van-hairline--top:after {
+        border: none;
+      }
+      .van-dialog__button {
+        border: none;
+        display: flex;
+        justify-content: center;
+        &.van-hairline--right:after {
+          border: none;
+        }
+        .van-button {
+          width: 96px;
+          height: 40px;
+          line-height: 40px;
+          font-size:15px;
+          border-radius:22px;
+          margin-bottom: 18px;
+        }
+        .dialog-index--van-dialog__cancel  {
+          border: 1px solid #E5E5E5 !important;
+          background-color: #fff;
+          color: #443822!important;
+          margin-left: 26px;
+        }
+        .dialog-index--van-dialog__confirm {
+          background:linear-gradient(135deg,rgba(255,202,76,1) 0%,rgba(255,149,23,1) 100%);
+          color: #ffffff !important;
+          margin-right: 26px;
+        }
+      }
+    }
+  }
+}
+#jsx-dialog_one_btn{
+  color: red;
+  .overlay-index--van-overlay{
+    background-color: rgba(0,0,0,.5) !important;
+  }
+  .dialog-index--van-dialog{
+    width: 270px;
+    border-radius: 14px;
+    text-align: center;
+    .van-dialog__header {
+      position: relative;
+      display: inline-block;
+      color: #443822;
+      font-size: 18px;
+      font-weight: bold;
+      padding-top: 20px;
+      &:after {
+        position: absolute;
+        width: calc(100% + 8px);
+        left: 50%;
+        transform: translate(-50%, 0);
+        bottom: 1px;
+        content: '';
+        height: 7px;
+        background:rgba(216,216,216,1) linear-gradient(90deg,rgba(255,202,76,1) 0%,rgba(255,149,23,1) 100%);
+        border-radius: 4px;
+        opacity:0.6;
+        z-index: -1;
+      }
+    }
+
+    .van-dialog__message {
+      padding: 20px 20px;
+      font-size:15px;
+      font-weight:400;
+      color:rgba(68,56,34,1);
+      line-height:21px;
+    }
+    .van-hairline--top {
+      &.van-hairline--top:after {
+        border: none;
+      }
+      .van-dialog__button {
+        border: none;
+        display: flex;
+        justify-content: center;
+        &.van-hairline--right:after {
+          border: none;
+        }
+        .van-button {
+          width: 222px;
+          height: 40px;
+          line-height: 40px;
+          font-size:15px;
+          border-radius:22px;
+          margin-bottom: 18px;
+        }
+        .dialog-index--van-dialog__confirm {
+          background:linear-gradient(135deg,rgba(255,202,76,1) 0%,rgba(255,149,23,1) 100%);
+          color: #ffffff !important;
+        }
+      }
+    }
+  }
+}
+#jsx-dialog_one_btn2{
+  color: red;
+  .overlay-index--van-overlay{
+    background-color: rgba(0,0,0,.5) !important;
+  }
+  .dialog-index--van-dialog{
+    width: 270px;
+    border-radius: 14px;
+    text-align: center;
+    .van-dialog__header {
+      position: relative;
+      display: inline-block;
+      color: #443822;
+      font-size: 18px;
+      font-weight: bold;
+      padding-top: 20px;
+      &:after {
+        position: absolute;
+        width: calc(100% + 8px);
+        left: 50%;
+        transform: translate(-50%, 0);
+        bottom: 1px;
+        content: '';
+        height: 7px;
+        background:rgba(216,216,216,1) linear-gradient(90deg,rgba(255,202,76,1) 0%,rgba(255,149,23,1) 100%);
+        border-radius: 4px;
+        opacity:0.6;
+        z-index: -1;
+      }
+    }
+
+    .van-dialog__message {
+      padding: 20px 20px;
+      font-size:15px;
+      font-weight:400;
+      color:rgba(68,56,34,1);
+      line-height:21px;
+    }
+    .van-hairline--top {
+      &.van-hairline--top:after {
+        border: none;
+      }
+      .van-dialog__button {
+        border: none;
+        display: flex;
+        justify-content: center;
+        &.van-hairline--right:after {
+          border: none;
+        }
+        .van-button {
+          width: 222px;
+          height: 40px;
+          line-height: 40px;
+          font-size:15px;
+          border-radius:22px;
+          margin-bottom: 18px;
+        }
+        .dialog-index--van-dialog__confirm {
+          background:linear-gradient(135deg,rgba(255,202,76,1) 0%,rgba(255,149,23,1) 100%);
+          color: #ffffff !important;
+        }
+      }
+    }
+  }
+}

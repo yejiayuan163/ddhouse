@@ -53,8 +53,8 @@
       height: 300px !important; //轮播区域大小
 
       .slide-image {
-        width: 355px !important;
-        height: 160px !important;
+        width: 335px !important;
+        height: 166px !important;
         border-radius: 6px 6px 0 0;
       }
     }

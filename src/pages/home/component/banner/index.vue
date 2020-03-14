@@ -16,7 +16,7 @@
       return {
         isShowIndicator: true, // 是否显示指示点
         indicatorColor: "rgba(255, 255, 255, 0.6)", // 指示默认颜色
-        indicatorActiveColor: "#FFDA8D", // 指示active颜色
+        indicatorActiveColor: "#FFFFFF", // 指示active颜色
         autoplay: true, // 是否自动播放
         interval: 3000, // 多久循环一次
         duration: 500 // 手动切换延迟时间
@@ -38,19 +38,19 @@
 
 <style scoped>
   image {
-    width: 355px !important;
-    height: 160px !important;
+    width: 335px !important;
+    height: 166px !important;
     border-radius: 6px;
   }
 
   .slide-image {
-    width: 355px !important;
-    height: 160px !important;
+    width: 335px !important;
+    height: 166px !important;
     border-radius: 6px;
   }
 
   /deep/ ._swiper {
-    height: 160px !important;
+    height: 166px !important;
 
   }
 

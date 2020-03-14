@@ -9,9 +9,9 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#f54343",
+    "navigationBarBackgroundColor": "#FFFFFF",
     "navigationBarTitleText": "叮叮好房",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "black"
   },
   "usingComponents": {
     "van-collapse": "/static/vant/collapse/index",

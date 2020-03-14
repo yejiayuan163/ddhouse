@@ -4,7 +4,7 @@
     <div class="content">
       <div class="title">
         <div>{{houseItem.title}}</div>
-        <div v-if="houseItem.type==='new'" class="newIcon">新</div>
+        <!--<div v-if="houseItem.type==='new'" class="newIcon">新</div>-->
       </div>
       <div class="des"><span>{{houseItem.city}}</span><span>{{houseItem.area}}|{{houseItem.acreage}}m²</span></div>
       <div class="price-wrap">
@@ -49,19 +49,25 @@
 <style lang="less" scoped>
   .label-list {
     display: flex;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #333333;
+    padding-top: 19px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f1f7;
 
     .house-img {
-      width: 150px;
-      height: 80px;
+      width: 132px;
+      height: 90px;
+      border-radius: 2px;
+      padding-right: 14px;
     }
 
     .content {
       .title {
         display: flex;
         justify-content: space-between;
+        font-size: 15px;
+        color: #222222;
         .newIcon {
+
           background-color: #ff0000;
         }
       }

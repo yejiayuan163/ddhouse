@@ -68,7 +68,12 @@ exports.cssLoaders = function (options) {
     css: generateLoaders(),
     wxss: generateLoaders(),
     postcss: generateLoaders(),
-    less: generateLoaders('less'),
+    less: generateLoaders('less').concat({
+      loader: 'sass-resources-loader',
+      options: {
+        resources: path.resolve(__dirname, '../src/assets/css/mixin.less') // 此处为你需要全局引入的less文件地址
+      }
+    }),
     sass: generateLoaders('sass', { indentedSyntax: true }),
     scss: generateLoaders('sass'),
     stylus: generateLoaders('stylus'),
