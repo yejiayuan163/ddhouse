@@ -2,6 +2,7 @@
   <div>
     <swiper :indicator-dots="isShowIndicator" :indicator-color="indicatorColor"
             @change="indexChange"
+            :circular="true"
             :indicator-active-color="indicatorActiveColor"
             :autoplay="autoplay" :interval="interval" :duration="duration">
       <div v-for="(item, index) in imgUrls" :key="index">

@@ -27,7 +27,7 @@
       <nav-bar></nav-bar>
     </div>
     <!--新闻-->
-    <news-bar :news-title="newsTitle"></news-bar>
+    <news-bar :newsList="newsList"></news-bar>
     <!--指引-->
     <guild></guild>
     <!--&lt;!&ndash;行情&ndash;&gt;-->
@@ -109,7 +109,7 @@
           }, {
             pic: "/static/images/banner1.png"
           }], // banner数据
-        newsTitle: '楼市深度解读：看懂2003，才有资格 谈2020！',
+        newsList: ["楼市深度解读：看懂2003，才有资格 谈2020！", "楼市深度解读：看懂2003，才有资格 谈2020！", "楼市深度解读：看懂2003，才有资格 谈2020！"],
         houseImgUrls: [
           {
             pic: "/static/images/haofangItem1.png",
@@ -258,17 +258,7 @@
             time: "2020/01/11-2020/01/12" // 时间
 
           }
-        ], // 活动列表
-        newsList: [
-          {
-            imgSrc: "/static/images/toutiaoImg1.png", // 图片链接
-            title: "多地复工复产 做到防控生产两不误", // 名称
-            read: "2706"
-          }, {
-            imgSrc: "/static/images/toutiaoImg2.png", // 图片链接
-            title: "央行：2019年房地产贷款增幅平稳", // 名称
-            read: "2705"
-          }] // 头条列表
+        ]
 
       };
     },
