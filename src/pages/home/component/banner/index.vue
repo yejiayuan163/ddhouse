@@ -41,7 +41,6 @@
       },
       indexChange(val) {
         this.currentIndex = val.target.current
-        console.log(val, 'ffffffff')
       }
     }
   };
