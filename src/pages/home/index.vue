@@ -45,7 +45,7 @@
         </van-tab>
         <van-tab title="二手房">
           <div class="house-list">
-            <house-item v-for="(item,index) in houseList" :house-item="item" :key="index"></house-item>
+            <house-item v-for="(item,index) in houseList2" :house-item="item" :key="index"></house-item>
           </div>
         </van-tab>
         <van-tab title="特价房">
@@ -55,7 +55,7 @@
         </van-tab>
         <van-tab title="看房日记">
           <div class="house-list">
-            <house-item v-for="(item,index) in houseList" :house-item="item" :key="index"></house-item>
+            <house-item v-for="(item,index) in houseList2" :house-item="item" :key="index"></house-item>
           </div>
         </van-tab>
       </van-tabs>
@@ -189,7 +189,57 @@
             price: "13500", // 单价
             coupon: true,// 优惠券
             labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
-          }], // 好房列表
+          }], // 新房列表
+        houseList2: [
+           {
+            imgSrc: "/static/images/itemImg3.png", // 图片链接
+            type: "second", //楼盘类型：一手、二手
+            title: "锦富·汇景湾", // 名称
+            city: "台山市", // 市
+            area: "台山区", // 区
+            name: "汇景湾",
+            houseDes:'3房2厅',
+            acreage:'90',
+            price: "13500", // 单价
+            coupon: true,// 优惠券
+            labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
+          }, {
+            imgSrc: "/static/images/itemImg4.png", // 图片链接
+            type: "new", //楼盘类型：一手、二手
+            title: "锦富·汇景湾", // 名称
+            city: "台山市", // 市
+            area: "台山区", // 区
+            name: "汇景湾",
+            houseDes:'3房2厅',
+            acreage:'90',
+            price: "13500", // 单价
+            coupon: true,// 优惠券
+            labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
+          },{
+            imgSrc: "/static/images/itemImg1.png", // 图片链接
+            type: "new", //楼盘类型：一手、二手
+            title: "锦富·汇景湾", // 名称
+            city: "台山市", // 市
+            area: "台山区", // 区
+            name: "汇景湾",
+            houseDes:'3房2厅',
+            acreage:'90',
+            price: "13500", // 单价
+            coupon: true,// 优惠券
+            labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
+          }, {
+            imgSrc: "/static/images/itemImg2.png", // 图片链接
+            type: "second", //楼盘类型：一手、二手
+            title: "锦富·汇景湾", // 名称
+            city: "台山市", // 市
+            area: "台山区", // 区
+            name: "汇景湾",
+            houseDes:'3房2厅',
+            acreage:'90',
+            price: "13500", // 单价
+            coupon: true,// 优惠券
+            labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
+          }], // 二手房列表
         activitylist: [
           {
             imgSrc: "/static/images/actImg1.png", // 图片链接
