@@ -50,23 +50,23 @@
     "list": [{
       "text": "首页",
       "pagePath": "pages/home/main",
-      "iconPath": "static/tabs/tab_10.jpg",
-      "selectedIconPath": "static/tabs/tab_10.jpg"
+      "iconPath": "static/tabs/tabb_1.png",
+      "selectedIconPath": "static/tabs/tabb_1.png"
     }, {
       "text": "算房贷",
       "pagePath": "pages/promoteHouse/main",
-      "iconPath": "static/tabs/tab_03.jpg",
-      "selectedIconPath": "static/tabs/tab_03.jpg"
+      "iconPath": "static/tabs/tabb_2.png",
+      "selectedIconPath": "static/tabs/tabb_2.png"
     },{
       "text": "咨询",
       "pagePath": "pages/integral/main",
-      "iconPath": "static/tabs/tab_05.jpg",
-      "selectedIconPath": "static/tabs/tab_05.jpg"
+      "iconPath": "static/tabs/tabb_3.png",
+      "selectedIconPath": "static/tabs/tabb_3.png"
     },{
       "text": "我的",
       "pagePath": "pages/personal/main",
-      "iconPath": "static/tabs/tab_07.jpg",
-      "selectedIconPath": "static/tabs/tab_07.jpg"
+      "iconPath": "static/tabs/tabb_4.png",
+      "selectedIconPath": "static/tabs/tabb_4.png"
     }],
     "position": "bottom"
   }
