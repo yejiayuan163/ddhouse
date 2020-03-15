@@ -28,26 +28,32 @@
   .news-wrap {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 335px;
     height: 67px;
     border-radius: 10px;
-    border: 1px solid #f1f1f1;
-    /*padding-bottom: 19px;*/
+    border: @theme-border;
+    margin-bottom: 17px;
 
     box-shadow: @theme-shadow;
     .news-title {
       padding-left: 14px;
-      border-left: 1px solid #f1f1f1;
+      border-left: @theme-border;
       font-size: @theme-font-mini;
       font-weight: bold;
-      width: 388px;
+      width: 200px;
+      flex: 1;
     }
     img {
+      padding: 15px;
       width: 30px;
       height: 30px;
     }
     .news-more{
       font-size: 9px;
+      color: @theme-bg-gray-color;
+      white-space: nowrap;
+      padding-right: 9px;
     }
   }
 </style>

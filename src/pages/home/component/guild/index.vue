@@ -27,6 +27,7 @@
   img{
     width: 106px;
     height: 56px;
+    box-shadow: @theme-shadow;
   }
 }
 </style>

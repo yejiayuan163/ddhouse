@@ -29,8 +29,8 @@
     <news-bar :news-title="newsTitle"></news-bar>
     <!--指引-->
     <guild></guild>
-    <!--行情-->
-    <hang-qing :city="city" :hangQingData="hangQingData"></hang-qing>
+    <!--&lt;!&ndash;行情&ndash;&gt;-->
+    <!--<hang-qing :city="city" :hangQingData="hangQingData"></hang-qing>-->
     <!--叮叮好房-->
     <div class="hao-fang">
       <title-bar text="查看全部" img-src="/static/images/haofangTitle.png"></title-bar>
@@ -121,7 +121,9 @@
             title: "锦富·汇景湾", // 名称
             city: "台山市", // 市
             area: "台山区", // 区
-            acreage: "35-50", // 建筑面积
+            name: "汇景湾",
+            houseDes:'3房2厅',
+            acreage:'90',
             price: "13500", // 单价
             coupon: true,// 优惠券
             labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
@@ -131,7 +133,9 @@
             title: "锦富·汇景湾", // 名称
             city: "台山市", // 市
             area: "台山区", // 区
-            acreage: "35-50", // 建筑面积
+            name: "汇景湾",
+            houseDes:'3房2厅',
+            acreage:'90',
             price: "13500", // 单价
             coupon: true,// 优惠券
             labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
@@ -141,7 +145,9 @@
             title: "锦富·汇景湾", // 名称
             city: "台山市", // 市
             area: "台山区", // 区
-            acreage: "35-50", // 建筑面积
+            name: "汇景湾",
+            houseDes:'3房2厅',
+            acreage:'90',
             price: "13500", // 单价
             coupon: true,// 优惠券
             labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
@@ -151,7 +157,9 @@
             title: "锦富·汇景湾", // 名称
             city: "台山市", // 市
             area: "台山区", // 区
-            acreage: "35-50", // 建筑面积
+            name: "汇景湾",
+            houseDes:'3房2厅',
+            acreage:'90',
             price: "13500", // 单价
             coupon: true,// 优惠券
             labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]

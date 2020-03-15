@@ -1,6 +1,6 @@
 <template>
   <div class="label-list">
-    <div v-for="(item,index) in labelList" :class="{red:item.hot==='true'}" :key="index">
+    <div class="label-item" v-for="(item,index) in labelList" :class="{red:item.hot==='true'}" :key="index">
       {{item.label}}
     </div>
   </div>
@@ -23,12 +23,20 @@
 
 <style lang="less" scoped>
 .label-list{
-  div{
+  .label-item{
     display: inline-block;
-    background-color: aliceblue;
+    background-color: @theme-bg-garyEB-color;
+    color: @theme-bg-gray-color-small;
+    width: 49px;
+    height:18px;
+    line-height: 18px;
+    text-align: center;
+    font-size: @theme-font-mini2;
+    border-right: 3px;
+    margin-right: 7px;
   }
   .red {
-    background-color: red;
+    /*background-color: red;*/
   }
 }
 </style>

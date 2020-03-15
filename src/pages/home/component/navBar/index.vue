@@ -69,7 +69,7 @@
 
   .nav-content {
     font-size: 11px;
-    color:#666666;
+    color:#333333;
     display: flex;
     flex-direction: column;
     align-items: center;
