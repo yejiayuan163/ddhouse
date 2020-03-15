@@ -1,25 +1,32 @@
 <template>
-  <swiper :indicator-dots="isShowIndicator" :indicator-color="indicatorColor"
-          :indicator-active-color="indicatorActiveColor"
-          :autoplay="autoplay" :interval="interval" :duration="duration">
-    <div v-for="(item, index) in imgUrls" :key="index">
-      <swiper-item>
-        <image lazy-load :src="item.pic" class="slide-image"/>
-      </swiper-item>
+  <div>
+    <swiper :indicator-dots="isShowIndicator" :indicator-color="indicatorColor"
+            @change="indexChange"
+            :indicator-active-color="indicatorActiveColor"
+            :autoplay="autoplay" :interval="interval" :duration="duration">
+      <div v-for="(item, index) in imgUrls" :key="index">
+        <swiper-item>
+          <image lazy-load :src="item.pic" class="slide-image"/>
+        </swiper-item>
+      </div>
+    </swiper>
+    <div class="bannerDots">
+        <div :class="['dot', {active : index1===currentIndex}]" v-for="(item,index1) in imgUrls" :key="index1"></div>
     </div>
-  </swiper>
+  </div>
 </template>
 
 <script>
   export default {
     data() {
       return {
-        isShowIndicator: true, // 是否显示指示点
+        isShowIndicator: false, // 是否显示指示点
         indicatorColor: "rgba(255, 255, 255, 0.6)", // 指示默认颜色
         indicatorActiveColor: "#FFFFFF", // 指示active颜色
         autoplay: true, // 是否自动播放
         interval: 3000, // 多久循环一次
-        duration: 500 // 手动切换延迟时间
+        duration: 500, // 手动切换延迟时间
+        currentIndex: 0
       };
     },
     props: {
@@ -31,12 +38,16 @@
     methods:{
       link_detail(item) {
         console.log('banner跳转')
+      },
+      indexChange(val) {
+        this.currentIndex = val.target.current
+        console.log(val, 'ffffffff')
       }
     }
   };
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   image {
     width: 335px !important;
     height: 166px !important;
@@ -70,5 +81,27 @@
 
   button.catchBtn::after {
     border: none;
+  }
+
+  .bannerDots{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    margin-top: -15px;
+    display: flex;
+    align-items: center;
+    div {
+      width: 9px;
+      height: 3px;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 1px;
+      margin-right: 4px;
+    }
+    div:last-child{
+      margin-right: 0;
+    }
+    .active{
+      background-color: #ffffff;
+    }
   }
 </style>
