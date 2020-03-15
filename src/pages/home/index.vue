@@ -368,6 +368,7 @@
     position: fixed;
     right: 10px;
     bottom: 120px;
+    z-index: 100;
   }
 
   button.catchBtn {
