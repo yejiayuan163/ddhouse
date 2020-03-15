@@ -1,7 +1,7 @@
 <template>
   <div class="title">
     <img :src="imgSrc" alt="">
-    <div>{{text}}></div>
+    <div>{{text}}  〉</div>
   </div>
 </template>
 
@@ -28,9 +28,21 @@
   .title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
     img {
-      width: 80px;
-      height: auto;
+      width: 65px;
+      height: 17px;
+    }
+    div:last-child{
+      text-align: center;
+      width: 67px;
+      height: 20px;
+      line-height: 20px;
+      border-radius: 10px;
+      border: @theme-border;
+      color: #888888;
+      font-size: @theme-font-mini2;
     }
   }
 </style>

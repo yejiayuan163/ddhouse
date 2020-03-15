@@ -114,7 +114,7 @@
       }
     }
   }
-  .label-list:last-child {
+  .house-list:last-child {
     border-bottom: none;
   }
 </style>

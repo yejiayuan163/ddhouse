@@ -33,28 +33,47 @@
     <!--<hang-qing :city="city" :hangQingData="hangQingData"></hang-qing>-->
     <!--叮叮好房-->
     <div class="hao-fang">
-      <title-bar text="查看全部" img-src="/static/images/haofangTitle.png"></title-bar>
-      <!--轮播图-->
-      <house-banner :houseImgUrls="houseImgUrls"></house-banner>
-      <div class="house-list">
-        <house-item v-for="(item,index) in houseList" :house-item="item" :key="index"></house-item>
-      </div>
+      <!--<title-bar text="查看全部" img-src="/static/images/haofangTitle.png"></title-bar>-->
+      <!--&lt;!&ndash;轮播图&ndash;&gt;-->
+      <!--<house-banner :houseImgUrls="houseImgUrls"></house-banner>-->
+      <van-tabs :active="houseListTab" :change="onTabChange">
+        <van-tab title="新房">
+          <div class="house-list">
+            <house-item v-for="(item,index) in houseList" :house-item="item" :key="index"></house-item>
+          </div>
+        </van-tab>
+        <van-tab title="二手房">
+          <div class="house-list">
+            <house-item v-for="(item,index) in houseList" :house-item="item" :key="index"></house-item>
+          </div>
+        </van-tab>
+        <van-tab title="特价房">
+          <div class="house-list">
+            <house-item v-for="(item,index) in houseList" :house-item="item" :key="index"></house-item>
+          </div>
+        </van-tab>
+        <van-tab title="看房日记">
+          <div class="house-list">
+            <house-item v-for="(item,index) in houseList" :house-item="item" :key="index"></house-item>
+          </div>
+        </van-tab>
+      </van-tabs>
+
     </div>
     <!--热门活动-->
     <div class="activity">
       <title-bar text="查看全部" img-src="/static/images/huodongTitle.png"></title-bar>
       <div class="activity-content">
-        <activity-item :activityItem1="activityItemList[0]"
-                       :activityItem2="activityItemList[1]"></activity-item>
+        <activity-item :activitylist="activitylist"></activity-item>
       </div>
     </div>
-    <!--叮叮头条-->
-    <div class="news">
-      <title-bar text="查看全部" img-src="/static/images/toutiaoTitle.png"></title-bar>
-      <div class="activity-content">
-        <news-list :newsList="newsList"></news-list>
-      </div>
-    </div>
+    <!--&lt;!&ndash;叮叮头条&ndash;&gt;-->
+    <!--<div class="news">-->
+      <!--<title-bar text="查看全部" img-src="/static/images/toutiaoTitle.png"></title-bar>-->
+      <!--<div class="activity-content">-->
+        <!--<news-list :newsList="newsList"></news-list>-->
+      <!--</div>-->
+    <!--</div>-->
   </div>
 </template>
 
@@ -102,6 +121,7 @@
             des: "新春优惠95折",
             labelList: [{ label: "待售", hot: "true" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
           }], // 楼盘轮播数据
+        houseListTab:0,
         hangQingData: {
           newHouse: {
             price: 8094,// 单价
@@ -164,13 +184,19 @@
             coupon: true,// 优惠券
             labelList: [{ label: "待售", hot: "false" }, { label: "花园洋房", hot: "false" }, { label: "湖景地产", hot: "true" }]
           }], // 好房列表
-        activityItemList: [
+        activitylist: [
           {
             imgSrc: "/static/images/actImg1.png", // 图片链接
             title: "叮叮新春嘉年华", // 名称
             time: "2020/01/11-2020/01/13" // 时间
 
           }, {
+            imgSrc: "/static/images/actImg2.png", // 图片链接
+            title: "叮叮新春嘉年华", // 名称
+            time: "2020/01/11-2020/01/12" // 时间
+
+          },
+          {
             imgSrc: "/static/images/actImg1.png", // 图片链接
             title: "叮叮新春嘉年华", // 名称
             time: "2020/01/11-2020/01/12" // 时间
@@ -206,6 +232,9 @@
     },
 
     methods: {
+      onTabChange(val){
+        console.log('当前列表tab：', val)
+      },
       bindViewTap() {
         const url = "../logs/main";
         if (mpvuePlatform === "wx") {
@@ -233,6 +262,7 @@
   .wrap {
     /*position: relative;*/
     padding: 20px;
+    background-color: #ffffff;
 
     .bg-img {
       position: absolute;
@@ -304,6 +334,24 @@
 
 
   .hao-fang {
+    padding-top: 16px;
+
+    /deep/ .van-tabs__nav {
+      /*background-color: transparent;*/
+
+    }
+    /deep/ .van-tabs__line {
+      width:74px !important;
+      margin-left: -15px !important;
+    }
+
+    /deep/ .van-hairline--top-bottom:after {
+      border: none;
+    }
+  }
+
+  .activity{
+    padding-bottom: 20px;
   }
 
   button.catchBtn {
