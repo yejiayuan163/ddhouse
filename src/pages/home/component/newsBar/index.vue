@@ -49,7 +49,7 @@
     margin-bottom: 17px;
     box-shadow: @theme-shadow;
     /deep/ ._swiper {
-      height: 30px !important;
+      height: 33px !important;
 
     }
     /deep/ ._swiper-item{

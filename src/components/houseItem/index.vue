@@ -70,6 +70,10 @@
     }
 
     .content {
+      height: 90px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       .title {
         display: flex;
         justify-content: space-between;

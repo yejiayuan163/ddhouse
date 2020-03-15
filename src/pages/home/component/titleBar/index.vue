@@ -38,7 +38,7 @@
       text-align: center;
       width: 67px;
       height: 20px;
-      line-height: 20px;
+      line-height: 19px;
       border-radius: 10px;
       border: @theme-border;
       color: #888888;
