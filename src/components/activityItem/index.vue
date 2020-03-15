@@ -60,7 +60,7 @@
       font-size: @theme-font-mini;
       .title{
         padding-top: 10px;
-        padding-bottom: 30px;
+        padding-bottom: 26px;
         color: #050505;
       }
       .time{

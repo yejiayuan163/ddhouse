@@ -32,7 +32,7 @@
     line-height: 18px;
     text-align: center;
     font-size: @theme-font-mini2;
-    border-right: 3px;
+    border-radius: 3px;
     margin-right: 7px;
   }
   .red {

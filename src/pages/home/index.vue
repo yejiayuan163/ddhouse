@@ -1,5 +1,6 @@
 <template>
   <div class="wrap">
+    <!--<head-bar></head-bar>-->
     <!--<img class="bg-img" src="/static/images/headerBg.png" alt="背景">-->
     <!--搜索栏-->
     <div class="search-wrap">
@@ -67,6 +68,9 @@
         <activity-item :activitylist="activitylist"></activity-item>
       </div>
     </div>
+    <div class="fix-wrap">
+      <fix-tool></fix-tool>
+    </div>
     <!--&lt;!&ndash;叮叮头条&ndash;&gt;-->
     <!--<div class="news">-->
       <!--<title-bar text="查看全部" img-src="/static/images/toutiaoTitle.png"></title-bar>-->
@@ -78,6 +82,7 @@
 </template>
 
 <script>
+  import headBar from "../../components/headerBar/index.vue";
   import banner from "./component/banner/index.vue";
   import houseBanner from "./component/houseBanner/index.vue";
   import navBar from "./component/navBar/index.vue";
@@ -89,6 +94,7 @@
   import houseItem from "../../components/houseItem/index.vue";
   import activityItem from "../../components/activityItem/index.vue";
   import newsList from "../../components/newsList/index.vue";
+  import fixTool from "../../components/fixTool/index.vue";
 
   export default {
     data() {
@@ -216,8 +222,11 @@
 
       };
     },
+    created() {
 
+    },
     components: {
+      headBar,
       banner,
       houseBanner,
       navBar,
@@ -228,7 +237,8 @@
       titleBar,
       houseItem,
       activityItem,
-      newsList
+      newsList,
+      fixTool
     },
 
     methods: {
@@ -261,7 +271,7 @@
 <style lang="less" scoped>
   .wrap {
     /*position: relative;*/
-    padding: 20px;
+    padding: 0 20px;
     background-color: #ffffff;
 
     .bg-img {
@@ -352,6 +362,12 @@
 
   .activity{
     padding-bottom: 20px;
+  }
+
+  .fix-wrap{
+    position: fixed;
+    right: 10px;
+    bottom: 120px;
   }
 
   button.catchBtn {

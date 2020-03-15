@@ -30,6 +30,19 @@ export default {
       source: `url("${process.env.PING_FANG_MEDIUM}")`,
       success: function(){console.log('load font success')}
     })
+
+    wx.getSystemInfo({
+      success: res => {
+        //导航高度
+        this.$navHeight = res.statusBarHeight + 46;
+        console.log('this.$navHeight:', this.$navHeight)
+      }, fail(err) {
+        console.log(err);
+      }
+    })
+  },
+  onLaunch() {
+
   },
   log () {
     console.log(`log at:${Date.now()}`)

@@ -42,7 +42,7 @@
       font-size: @theme-font-mini;
       font-weight: bold;
       width: 200px;
-      flex: 1;
+      flex: 2;
     }
     img {
       padding: 15px;
@@ -54,6 +54,7 @@
       color: @theme-bg-gray-color;
       white-space: nowrap;
       padding-right: 9px;
+
     }
   }
 </style>

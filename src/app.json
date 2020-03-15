@@ -50,23 +50,23 @@
     "list": [{
       "text": "首页",
       "pagePath": "pages/home/main",
-      "iconPath": "static/tabs/shouye.jpg",
-      "selectedIconPath": "static/tabs/shouye.jpg"
+      "iconPath": "static/tabs/tab_10.jpg",
+      "selectedIconPath": "static/tabs/tab_10.jpg"
     }, {
-      "text": "笋盘",
+      "text": "算房贷",
       "pagePath": "pages/promoteHouse/main",
-      "iconPath": "static/tabs/sunpan.jpg",
-      "selectedIconPath": "static/tabs/sunpan.jpg"
+      "iconPath": "static/tabs/tab_03.jpg",
+      "selectedIconPath": "static/tabs/tab_03.jpg"
     },{
-      "text": "领积分",
+      "text": "咨询",
       "pagePath": "pages/integral/main",
-      "iconPath": "static/tabs/jifen.jpg",
-      "selectedIconPath": "static/tabs/jifen.jpg"
+      "iconPath": "static/tabs/tab_05.jpg",
+      "selectedIconPath": "static/tabs/tab_05.jpg"
     },{
       "text": "我的",
       "pagePath": "pages/personal/main",
-      "iconPath": "static/tabs/wode.jpg",
-      "selectedIconPath": "static/tabs/wode.jpg"
+      "iconPath": "static/tabs/tab_07.jpg",
+      "selectedIconPath": "static/tabs/tab_07.jpg"
     }],
     "position": "bottom"
   }
